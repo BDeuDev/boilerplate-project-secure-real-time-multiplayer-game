@@ -1,5 +1,5 @@
 class Collectible {
-constructor(id, x, y, value) {
+  constructor({ id = Date.now(), x = 0, y = 0, value = 1 } = {}) {
     this.id = id;
     this.x = x;
     this.y = y;
@@ -13,6 +13,6 @@ constructor(id, x, y, value) {
 */
 try {
   module.exports = Collectible;
-} catch(e) {}
+} catch (e) { }
 
 export default Collectible;

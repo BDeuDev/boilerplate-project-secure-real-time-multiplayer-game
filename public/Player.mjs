@@ -1,9 +1,9 @@
 class Player {
-  constructor(id, x, y) {
+  constructor({ id = Date.now(), x = 100, y = 100, score = 0 } = {}) {
     this.id = id;
     this.x = x;
     this.y = y;
-    this.score = 0;
+    this.score = score;
   }
 
   movePlayer(direction, step) {
@@ -20,12 +20,7 @@ class Player {
   }
 
   collision(collectible) {
-    return (
-      this.x < collectible.x + 20 &&
-      this.x + 20 > collectible.x &&
-      this.y < collectible.y + 20 &&
-      this.y + 20 > collectible.y
-    );
+    return this.x === collectible.x && this.y === collectible.y;
   }
 }
 
